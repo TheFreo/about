@@ -73,6 +73,8 @@ $(".translate").click(function () {
     $(".lang").each(function (index, element) {
         $(this).text(arrLang[lang][$(this).attr("key")]);
     });
+	$('.menu').toggleClass('open');
+    $('.burger').toggleClass('burger-open');
 });
 
 //Hello!
