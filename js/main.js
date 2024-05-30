@@ -36,7 +36,6 @@ $('.but').click(function () {
 })
 
 // Brithday
-
 var now = new Date();
 var current_year = now.getFullYear();
 var next_year = current_year;
@@ -66,3 +65,16 @@ function pad(num, size) {
     return s;
 };
 
+function swipe(event) {
+    const p1 = document.querySelector('#content');
+    const touth = event.targetTouches[0];
+    const px = touth.pageX;
+    const midpoint = Math.floor(screen.width / 2);
+    if (px < midpoint) {
+        $('.menu').removeClass('open');
+        $('.burger').removeClass('burger-open');
+    } else {
+        $('.menu').addClass('open');
+        $('.burger').addClass('burger-open');
+    }
+}
