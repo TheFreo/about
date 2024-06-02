@@ -64,17 +64,3 @@ function pad(num, size) {
     while (s.length < size) s = "0" + s;
     return s;
 };
-
-function swipe(event) {
-    const p1 = document.querySelector('#content');
-    const touth = event.targetTouches[0];
-    const px = touth.pageX;
-    const midpoint = Math.floor(screen.width / 2);
-    if (px < midpoint) {
-        $('.menu').removeClass('open');
-        $('.burger').removeClass('burger-open');
-    } else {
-        $('.menu').addClass('open');
-        $('.burger').addClass('burger-open');
-    }
-}
