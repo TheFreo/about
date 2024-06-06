@@ -97,6 +97,7 @@ function setTime() {
         $("#timehello").attr('key', 'evening');
     }
     console.log(hour);
+    console.log("What are you doing here?");
 
     if (message !== "") {
         $("#timehello").html("Good " + message + "!");
