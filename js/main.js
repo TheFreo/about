@@ -36,19 +36,16 @@ $('.but').click(function () {
 })
 
 // Brithday
-var now = new Date();
-var current_year = now.getFullYear();
-var next_year = current_year;
-
-var target_date = new Date("Jun 15, " + next_year).getTime();
-
-var days;
-
-var $days = document.getElementById("d");
+let now = new Date();
+let current_year = now.getFullYear();
+let next_year = current_year;
+let target_date = new Date("Jun 16, " + next_year).getTime();
+let days;
+let $days = document.getElementById("d");
 
 function update() {
-    var current_date = new Date().getTime();
-    var seconds_left = (target_date - current_date) / 1000;
+    let current_date = new Date().getTime();
+    let seconds_left = (target_date - current_date) / 1000;
 
     days = parseInt(seconds_left / 86400);
 
