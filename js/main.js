@@ -50,11 +50,15 @@ function update() {
     days = parseInt(seconds_left / 86400);
 
     $days.innerHTML = pad(days, 2);
-}
 
+    if (days === 0) {
+        $("#d").html('Today!');
+        $("#d").attr('key', 'today');
+    };
+
+}
 update();
 
-setInterval(update, 1000);
 
 function pad(num, size) {
     var s = num + "";

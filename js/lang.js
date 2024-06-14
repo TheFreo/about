@@ -26,7 +26,8 @@ let arrLang = {
         'morning': 'Доброе утро!',
         'afternoon': 'Добрый день!',
         'evening': 'Добрый вечер!',
-        'night': 'Доброй ночи!'
+        'night': 'Доброй ночи!',
+        'today': 'Сегодня!'
     },
     'en': {
         'menu': 'Menu',
@@ -55,7 +56,8 @@ let arrLang = {
         'morning': 'Good morning!',
         'afternoon': 'Good afternoon!',
         'evening': 'Good evening!',
-        'night': 'Good night!'
+        'night': 'Good night!',
+        'today': 'Today!'
     }
 };
 
@@ -104,6 +106,9 @@ function setTime() {
     }
 }
 setTime();
+
+
+
 
 
 

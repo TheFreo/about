@@ -284,7 +284,7 @@
 
 .about__grid {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
 }
 
 .about__mainpc h1, .about__laptop h1, .about__mac h1 {
