@@ -38,8 +38,8 @@ $('.but').click(function () {
 // Brithday
 let now = new Date();
 let current_year = now.getFullYear();
-let next_year = current_year + 1;
-let target_date = new Date("Jun 16, " + next_year).getTime();
+let next_year = current_year;
+let target_date = new Date("Jun 13 " + next_year).getTime();
 let days;
 let $days = document.getElementById("d");
 
@@ -54,8 +54,7 @@ function update() {
     if (days === 0) {
         $("#d").html('Today!');
         $("#d").attr('key', 'today');
-    };
-
+    }
 }
 update();
 
@@ -65,3 +64,25 @@ function pad(num, size) {
     while (s.length < size) s = "0" + s;
     return s;
 };
+
+//progress HTML
+let procentHTML = '90%';
+document.getElementById('htmlLine').style.width = procentHTML;
+document.getElementById('htmlProg').textContent =procentHTML;
+
+//progress CSS
+let procentCSS = '80%';
+document.getElementById('cssLine').style.width = procentCSS;
+document.getElementById('cssProg').textContent = procentCSS;
+
+//progress JS
+let procentJS = '30%';
+document.getElementById('jsLine').style.width = procentJS;
+document.getElementById('jsProg').textContent = procentJS;
+
+//progress C++
+let procentCPP = '13%';
+document.getElementById('cppLine').style.width = procentCPP;
+document.getElementById('cppProg').textContent = procentCPP;
+
+
