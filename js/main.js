@@ -38,7 +38,7 @@ $('.but').click(function () {
 // Brithday
 let now = new Date();
 let current_year = now.getFullYear();
-let next_year = current_year;
+let next_year = current_year + 1;
 let target_date = new Date("Jun 13 " + next_year).getTime();
 let days;
 let $days = document.getElementById("d");
