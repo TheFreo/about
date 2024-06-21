@@ -1,6 +1,7 @@
-.root {
+:root {
     --white: #fff;
     --dark: #000;
+    --darktheme:  #e023e8;
 }
 
 .wrapper {
@@ -9,7 +10,7 @@
     overflow: hidden;
     font-family: NTSomic;
     font-weight: 400;
-    background-color: #ffffff;
+    background-color: var(--white);
     transition: color 0.3s ease;
 }
 
@@ -67,7 +68,7 @@
 }
 
 .header_line {
-    border-bottom: 2px solid #000;
+    border-bottom: 2px solid var(--dark);
     margin: 91px 1920px;
     margin-top: 0px;
     animation: 1s lineanim;
@@ -108,7 +109,7 @@
 }
 
 .header__theme a:active {
-    color: #ffffff;
+    color: var(--white);
     transition: 0.2s;
 }
 
@@ -123,16 +124,6 @@
     border-radius: 50%;
     z-index: 999;
     transition: all .8s ease;
-}
-
-@keyframes burger-focus {
-    0% {
-        color: #aaaaaa;
-    }
-
-    100% {
-        color: #000;
-    }
 }
 
 .burger--follow {
@@ -171,7 +162,7 @@
 .menu {
     position: absolute;
     height: 100%;
-    background: #000000;
+    background: var(--dark);
     opacity: 1;
     transition: all .8s ease;
     overflow-y: auto;
@@ -187,14 +178,14 @@
 }
 
 .menu {
-    color: #ffffff;
+    color: var(--white);
     display: flex;
     margin: 0 auto;
     flex-direction: column;
 }
 
 .but {
-    color: #ffffff;
+    color: var(--white);
     background-color: #ffffff00;
     font-size: 24px;
 }
@@ -212,7 +203,7 @@
     width: 100%;
     transform: scale(0, 1);
     transition: transform 0.4s;
-    background: #fff;
+    background: var(--white);
     transform-origin: right top;
 }
 
@@ -247,7 +238,6 @@
     height: 500px;
     box-shadow: 0 0 12px 0 #000000;
     object-fit: cover;
-    background: #00ffff;
 }
 
 .main_wrapper {
@@ -315,8 +305,7 @@
 .bar_fll {
     text-align: center;
     width: 50%;
-    color: rgb(0, 0, 0);
-    background-color: wheat;
+    color: var(--dark);
     border-radius: 10px;
     height: inherit;
 }
@@ -331,17 +320,20 @@
 }
 
 .darkthm {
-    color: #cd47cf;
-    background-color: #000000;
+    color: var(--darktheme);
+    background-color: var(--dark);
 }
 
 .darkline {
-    border-bottom: 2px solid #e023e8;
+    border-bottom: 2px solid var(--darktheme);
 }
 
+.darkmail {
+    background:  var(--darktheme);
+}
 .darkbtn {
     transition: all .8s ease;
-    color: #e023e8;
+    color: var(--darktheme);
 }
 
 .gridup {
@@ -350,7 +342,7 @@
 }
 
 .avatardark {
-    box-shadow: 0 0 30px 0 #cd47cf !important;
+    box-shadow: 0 0 30px 0 var(--darktheme) !important;
 }
 
 .about__contact {
@@ -453,7 +445,7 @@
     }
 
     .burger-open {
-        color: #ffffff;
+        color: var(--white);
         left: 30px;
     }
 
@@ -492,8 +484,7 @@
             bottom: 0;
             animation-delay: 2s;
             opacity: 1;
-            transform: translatey(30px);
-            -moz-transform: translatey(50px);
+            -webkit-transform: translatey(30px);
         }
     }
 

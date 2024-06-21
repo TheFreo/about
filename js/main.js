@@ -11,13 +11,13 @@ $('.but').click(function () {
 });
 
 // Dark theme 
-$('.themebtn').click(function () {
-    $('.wrapper').toggleClass('darkthm');
-    $('.header_line').toggleClass('darkline');
-    $('.themebtn').toggleClass('darkbtn');
-    $('.burger').toggleClass('darkbtn');
-    $('.avatar img').toggleClass('avatardark');
-});
+// $('.themebtn').click(function () {
+//     $('.wrapper').toggleClass('darkthm');
+//     $('.header_line').toggleClass('darkline');
+//     $('.themebtn').toggleClass('darkbtn');
+//     $('.burger').toggleClass('darkbtn');
+//     $('.avatar img').toggleClass('avatardark');
+// });
 
 // Tabs 
 let button = document.getElementsByClassName('but'),
@@ -81,7 +81,6 @@ let procentCPP = '13%';
 document.getElementById('cppLine').style.width = procentCPP;
 document.getElementById('cppProg').textContent = procentCPP;
 
-
 // Language switcher
 var lang;
 $(document).ready(function () {
@@ -132,3 +131,27 @@ function setTime() {
     }
 }
 setTime();
+
+//Color picker
+let timer_id = 0;
+let menu = false; 
+
+$('.themebtn').mousedown(function () {
+    timer_id = setTimeout('colorpicker()', 1000)
+});
+$('.themebtn').mouseup(function () {
+    clearTimeout(timer_id); if (!menu) fastClick();
+});
+
+function colorpicker() {
+    alert('Soon...');
+    // document.querySelector('#favcolor').style.display='block';
+};
+
+function fastClick() {
+    $('.wrapper').toggleClass('darkthm');
+    $('.header_line').toggleClass('darkline');
+    $('.themebtn').toggleClass('darkbtn');
+    $('.burger').toggleClass('darkbtn');
+    $('.avatar img').toggleClass('avatardark');
+};
