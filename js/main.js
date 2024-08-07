@@ -2,12 +2,14 @@
 $('.burger').click(function () {
     $('.menu').toggleClass('open');
     $('.burger').toggleClass('burger-open');
+    $(".hamburger").toggleClass("is-active");
 });
 
 // Close burger
 $('.but').click(function () {
     $('.menu').toggleClass('open');
     $('.burger').toggleClass('burger-open');
+    $(".hamburger").toggleClass("is-active");
 });
 
 // Dark theme 
@@ -111,7 +113,7 @@ function setTime() {
         $('.wrapper').toggleClass('darkthm');
         $('.header_line').toggleClass('darkline');
         $('.themebtn').toggleClass('darkbtn');
-        $('.burger').toggleClass('darkbtn');
+        $('.line').toggleClass('darkbtn2'); 
         $('.avatar img').toggleClass('avatardark');
     } else if (hour < 12) {
         message = "morning";
@@ -134,7 +136,7 @@ setTime();
 
 //Color picker
 let timer_id = 0;
-let menu = false; 
+let menu = false;
 
 $('.themebtn').mousedown(function () {
     timer_id = setTimeout('colorpicker()', 1000)
@@ -152,6 +154,6 @@ function fastClick() {
     $('.wrapper').toggleClass('darkthm');
     $('.header_line').toggleClass('darkline');
     $('.themebtn').toggleClass('darkbtn');
-    $('.burger').toggleClass('darkbtn');
+    $('.line').toggleClass('darkbtn2');
     $('.avatar img').toggleClass('avatardark');
 };

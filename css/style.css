@@ -137,15 +137,39 @@
     animation-fill-mode: forwards;
 }
 
-.burger span {
-    content: "";
-    display: block;
+.hamburger .line{
     width: 30px;
     height: 4px;
     background-color: #1E1B1B;
+    display: block;
+    margin: 6px auto;
     border-radius: 3px;
-    margin: 4px 0;
-}
+    -webkit-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .hamburger:hover{
+    cursor: pointer;
+  }
+
+#hamburger-1.is-active .line:nth-child(2){
+    opacity: 0;
+  }
+  
+  #hamburger-1.is-active .line:nth-child(1){
+    -webkit-transform: translateY(8px) rotate(45deg);
+    -ms-transform: translateY(8px) rotate(45deg);
+    -o-transform: translateY(8px) rotate(45deg);
+    transform: translateY(10px) rotate(45deg);
+  }
+  
+  #hamburger-1.is-active .line:nth-child(3){
+    -webkit-transform: translateY(-8px) rotate(-45deg);
+    -ms-transform: translateY(-8px) rotate(-45deg);
+    -o-transform: translateY(-8px) rotate(-45deg);
+    transform: translateY(-10px) rotate(-45deg);
+  }
 
 .burger-open {
     transition: all .8s ease;
@@ -274,7 +298,7 @@
 
 .about__grid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
 }
 
 .about__mainpc h1, .about__laptop h1, .about__mac h1 {
@@ -331,9 +355,15 @@
 .darkmail {
     background:  var(--darktheme);
 }
+
 .darkbtn {
     transition: all .8s ease;
     color: var(--darktheme);
+}
+
+.darkbtn2{
+    transition: all .8s ease;
+    background-color: var(--darktheme) !important;
 }
 
 .gridup {
