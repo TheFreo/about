@@ -99,6 +99,7 @@ $(".translate").click(function () {
     });
     $('.menu').toggleClass('open');
     $('.burger').toggleClass('burger-open');
+    $(".hamburger").toggleClass("is-active");
 });
 
 //Hello!
