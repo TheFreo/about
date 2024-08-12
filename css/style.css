@@ -436,6 +436,10 @@
         left: 30px;
     }
 
+    .openmen {
+        background-color: var(--white) !important; 
+    }
+
     .open {
         width: 100%;
     }
@@ -477,6 +481,10 @@
     .burger-open {
         color: var(--white);
         left: 30px;
+    }
+
+    .openmen {
+        background-color: var(--white) !important; 
     }
 
     .open {

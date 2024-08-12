@@ -3,6 +3,7 @@ $('.burger').click(function () {
     $('.menu').toggleClass('open');
     $('.burger').toggleClass('burger-open');
     $(".hamburger").toggleClass("is-active");
+    $(".line").toggleClass("openmen");
 });
 
 // Close burger
@@ -10,6 +11,7 @@ $('.but').click(function () {
     $('.menu').toggleClass('open');
     $('.burger').toggleClass('burger-open');
     $(".hamburger").toggleClass("is-active");
+    $(".line").toggleClass("openmen");
 });
 
 // Dark theme 
@@ -100,6 +102,7 @@ $(".translate").click(function () {
     $('.menu').toggleClass('open');
     $('.burger').toggleClass('burger-open');
     $(".hamburger").toggleClass("is-active");
+    $(".line").toggleClass("openmen");
 });
 
 //Hello!
