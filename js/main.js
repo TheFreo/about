@@ -76,12 +76,12 @@ document.getElementById('cssLine').style.width = procentCSS;
 document.getElementById('cssProg').textContent = procentCSS;
 
 //progress JS
-let procentJS = '30%';
+let procentJS = '40%';
 document.getElementById('jsLine').style.width = procentJS;
 document.getElementById('jsProg').textContent = procentJS;
 
 //progress C++
-let procentCPP = '13%';
+let procentCPP = '15%';
 document.getElementById('cppLine').style.width = procentCPP;
 document.getElementById('cppProg').textContent = procentCPP;
 

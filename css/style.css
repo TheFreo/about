@@ -1,7 +1,7 @@
 :root {
     --white: #fff;
     --dark: #000;
-    --darktheme:  #e023e8;
+    --darktheme:  #4e9a9f;
 }
 
 .wrapper {
@@ -446,7 +446,6 @@
 }
 
 @media screen and (max-width: 500px) {
-
     .about__grid {
         text-align: inherit;
     }
@@ -457,17 +456,19 @@
 
     .main_wrapper {
         flex-direction: column;
-        margin: 46px 0;
+        margin: 40px 0;
+        transform: scale(0.9);
     }
 
     .avatar img {
         width: 300px;
         height: 300px;
+        margin-bottom: 20px;
     }
 
     .main_left h1 {
         margin-top: 30px;
-        font-size: 40px;
+        font-size: 50px;
     }
 
     .main_left p {
@@ -493,6 +494,10 @@
 
     .about__bio-item {
         line-height: 20px;
+    }
+	
+	.about__bio-list h1 {
+        margin-bottom: 20px;
     }
 
     .about__mac {
