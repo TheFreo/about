@@ -1,4 +1,17 @@
 @font-face {
+    font-family: FiraSans;
+    font-weight: 400;
+    font-style: normal;
+    src:
+        local("Fredoka Regular"),
+        local("Fredoka-Regular"),
+        url("../fonts/Fredoka-Regular.woff2") format("woff2"),
+        url("../fonts/Fredoka-Regular.woff") format("woff"),
+        url("../fonts/Fredoka-Regular.eot") format("eot");
+    font-display: swap;
+}
+
+@font-face {
     font-family: NTSomic;
     font-weight: 400;
     font-style: normal;
