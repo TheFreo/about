@@ -1,10 +1,13 @@
+body {
+    background-color: #000;
+}
+
 .wrapper {
     min-height: 100%;
     width: 100%;
     overflow: hidden;
     font-family: NTSomic;
     font-weight: 400;
-    background-color: #000000;
 }
 
 .overlay {
@@ -79,7 +82,7 @@
 }
 
 .main__page {
-    background: linear-gradient(rgba(0 0 0 / 50%), rgba(0 0 0 / 50%)), url(../images/winter.webp);
+    background: linear-gradient(rgba(0 0 0 / 50%), rgba(0 0 0 / 50%)), url(../images/back.gif);
     background-size: cover;
     background-position: center center;
     min-height: 800px;
@@ -124,6 +127,10 @@
     height: 500px;
     box-shadow: 0 0 12px 0 #000000;
     object-fit: cover;
+}
+
+.statusOnline {
+    box-shadow: 0 0 12px 0 #3a6c3a !important;
 }
 
 .title__inner {

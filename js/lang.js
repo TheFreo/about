@@ -19,8 +19,6 @@ let arrLang = {
         'brith': 'День рождения: 15.06.2005 (Осталось ',
         'brith2': ' дней)',
         'country': 'Страна: Россия (мечтаю переехать в Японию или Европу)',
-        'city': 'Город: Новосибирск (Родной: Сургут)',
-        'stud': 'Учусь: СибГУТИ',
         'langu': 'Языки: Русский, Английский (30%), Украинский (70%)',
         'listen': 'Слушаю: Рок (Любой), IDM, Ambient',
         'cont': 'Контакты',
@@ -28,7 +26,8 @@ let arrLang = {
         'afternoon': 'Добрый день!',
         'evening': 'Добрый вечер!',
         'night': 'Доброй ночи!',
-        'dev': '©2024, Разработано ',
+        'dev': '©2025, Разработано ',
+        'age': 'Возраст: ',
         'today': 'Сегодня!'
     },
     'en': {
@@ -51,16 +50,15 @@ let arrLang = {
         'brith': 'Brithday: 15.06.2005 (through ',
         'brith2': ' days)',
         'country': 'Counrty: Russia (dream: Japan or Europe)',
-        'city': 'City: Novosibirsk (Hometowm: Surgut)',
-        'stud': 'Studying: SibSUTIS',
-        'langu': 'Languages: Russia, English (30%), Ukrainian (70%)',
+        'langu': 'Languages: Russian, English (30%), Ukrainian (70%)',
         'listen': 'Listen: Rock (Any), IDM, Ambient',
         'cont': 'Contacts',
         'morning': 'Good morning!',
         'afternoon': 'Good afternoon!',
         'evening': 'Good evening!',
         'night': 'Good night!',
-        'dev': '©2024, Crafted by ',
+        'dev': '©2025, Crafted by ',
+        'age': 'Age:',
         'today': 'Today!'
     }
 };
