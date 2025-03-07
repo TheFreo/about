@@ -107,6 +107,7 @@ let lang = "en";
 
 document.querySelectorAll(".translate").forEach(function (button) {
     button.addEventListener("click", function () {
+	navigator.vibrate([10,150]);
         lang = this.id;
         document.querySelectorAll(".lang").forEach(function (element) {
             element.textContent = arrLang[lang][element.getAttribute("key")];
