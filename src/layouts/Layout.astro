@@ -14,6 +14,8 @@ const lang = getLangFromUrl(Astro.url);
     	<meta name="description" content="Personal website of TheFreo">
     	<link rel="mask-icon" href="/logo.svg" color="#000">
     	<link rel="icon" type="image/x-icon" href='/fav.png'>
+		<link rel="preload" href="style.css" as="style" />
+		<link rel="preload" href="/fonts/NTSomic-Regular.woff" as="font" type="font/woff" crossorigin />
 		<meta name="generator" content={Astro.generator} />
 		<link rel="stylesheet" type='text/css' href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css"/>
 		<title>TheFreo</title>
