@@ -1,0 +1,91 @@
+---
+import logoHead from '../assets/icons/logoHead.svg';
+import gitLogo from '../assets/icons/git.svg';
+import ovkLogo from '../assets/icons/ovk.png';
+import shikiLogo from '../assets/icons/shikimori.svg';
+import { Image } from 'astro:assets';
+import LanguagePicker from '../components/LanguagePicker.astro';
+---
+
+<header>
+    <div class="header__inner">
+        <a class="homebtn" href="#main">
+            <Image src={logoHead} alt="" style="width: 48px; height: auto;">
+        </a>
+        <ul class="header__link-list">
+            <li class="header__link-item">
+                <a href="https://github.com/TheFreo/">
+                    <Image style="width: 23px; height: auto;" src={gitLogo} alt="My GitHub">
+                </a>
+            </li>
+            <li class="header__link-item">
+                <a href="https://ovk.to/freo">
+                    <Image style="width: 23px; height: auto;" src={ovkLogo} alt="OpenVK">
+                </a>
+            </li>
+            <li class="header__link-item">
+                <a href="https://shikimori.one/TheFreo">
+                    <Image style="width: 23px; height: auto;" src={shikiLogo} alt="My anime list">
+                </a>
+            </li>
+        </ul>
+        <LanguagePicker />
+    </div>
+</header>
+<style>
+.header__inner {
+    color: #fff;
+    position: fixed;
+    padding: 35px 55px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: -webkit-fill-available;
+    height: 100vh;
+    align-items: center;
+    opacity: 0;
+    animation: 1s forwards start_page 1.5s;
+    z-index: 999;
+}
+
+.header__inner p {
+    margin-bottom: 30px;
+}
+
+.header__link-item {
+    margin-bottom: 30px;
+}
+
+.header__link-item:last-child {
+    margin-bottom: 0;
+}
+
+@media screen and (max-width: 810px) {
+    .header {
+        position: relative;
+    }
+
+    .header__inner {
+        position: absolute;
+        flex-direction: row;
+        width: 100%;
+        padding: 45px 55px;
+        height: 0;
+        z-index: 999;
+    }
+
+    .header__link-list {
+        display: flex;
+    }
+
+    .header__link-item {
+        margin-right: 30px;
+        margin-bottom: 0;
+    }
+
+    .header__link-item:last-child {
+        margin-right: 0;
+        margin-bottom: 0;
+    }
+}
+</style>

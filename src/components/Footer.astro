@@ -1,0 +1,23 @@
+---
+import { getLangFromUrl, useTranslations } from '../i18n/utils';
+
+const today = new Date();
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+---
+
+<footer>
+	&copy; {today.getFullYear()}, {t('dev')} <a href="https://github.com/TheFreo/about">TheFreo</a>
+</footer>
+<style>
+	footer {
+		color: #fff;
+		text-align: center;
+		transition: all .5s;
+		margin-bottom: 35px;
+	}
+	footer a {
+		text-decoration: underline;
+		text-decoration-color: #888;
+	}
+</style>

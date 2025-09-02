@@ -1,0 +1,276 @@
+---
+import { getLangFromUrl, useTranslations } from "../i18n/utils";
+import Image from "astro/components/Image.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import Layout from "../layouts/Layout.astro";
+import avatar from "../assets/avatar.jpg";
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+const msgs = {
+	dev: t("dev"),
+	morning: t("morning"),
+	afternoon: t("afternoon"),
+	evening: t("evening"),
+};
+---
+
+<Layout>
+	<Header />
+	<main>
+		<div class="wrapper">
+			<div class="overlay">
+				<section id="main" class="main__page">
+					<div class="container">
+						<div class="main__page-inner">
+							<ul class="main__menu-list">
+								<li class="main__menu-item">
+									<a class="main__menu-btn lang" href="#about"
+										>{t("about")}</a
+									>
+								</li>
+								<li class="main__menu-item">
+									<a
+										class="main__menu-btn lang"
+										href="#contacts">{t("cont")}</a
+									>
+								</li>
+							</ul>
+							<div class="main__title">
+								<Image id="status" src={avatar} alt="" />
+								<div class="title__inner">
+									<h1
+										class="lang"
+										data-msgs={JSON.stringify(msgs)}
+										id="timehello"
+									>
+									</h1>
+									<h1 class="lang" style="margin-top: 0;">
+										{t("welup")}
+									</h1>
+									<p class="lang">{t("welun")}</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+				<section id="about">
+					<div class="container">
+						<div class="about__inner">
+							<div class="about__title">
+								<h1 class="lang">{t("about")}</h1>
+							</div>
+							<div about-grid class="about__grid">
+								<section class="bio">
+									<h1 class="lang">{t("bio")}</h1>
+									<div class="bio__inner">
+										<p class="lang">{t("name")}</p>
+										<div style="display: ruby;">
+											<p class="lang">{t("age")}</p>
+											<span id="myAge"></span>
+										</div>
+										<br />
+										<div style="display: ruby;">
+											<p class="lang">{t("brith")}</p>
+											<span id="brithDays"></span><span
+												class="lang"
+											>
+												{t("brith2")}</span
+											>
+										</div>
+										<p class="lang">{t("country")}</p>
+										<p class="lang">{t("langu")}</p>
+										<p class="lang">
+											{t("listen")}
+										</p>
+									</div>
+								</section>
+								<section class="skills">
+									<h1 class="lang">{t("skills")}</h1>
+									<div class="skills_icons">
+										<div class="skills_icons-inner">
+											<i class="devicon-html5-plain"></i>
+											<i class="devicon-css3-plain"></i>
+											<i class="devicon-javascript-plain"></i>
+											<i class="devicon-react-original"></i>
+											<i class="devicon-astro-plain"></i>
+											<i class="devicon-git-plain"></i>
+											<i class="devicon-linux-plain"></i>
+											<i class="devicon-vscode-plain"></i>
+										</div>
+									</div>
+								</section>
+								<section class="devices">
+									<h1 class="lang">Devices</h1>
+									<ul class="devices-list">
+										<li class="devices-item">
+											<h2 class="lang">{t("pc")}</h2>
+											<p>
+												<span class="lang">OS:</span> Windows
+												10 Pro && Arch Linux
+											</p>
+											<p>
+												<span class="lang">CPU:</span> Amd
+												Ryzen 5500
+											</p>
+											<p>
+												<span class="lang">GPU:</span> Nvidia
+												Geforce GTX 1660 Super
+											</p>
+											<p>
+												<span class="lang">RAM:</span> 16
+												GB
+											</p>
+										</li>
+										<li class="devices-item">
+											<h2 class="lang">
+												{t("lap")}
+											</h2>
+											<p>
+												<span class="lang">OS:</span> macOS
+												Monterey 12.4
+											</p>
+											<p>
+												<span class="lang">CPU:</span> Intel
+												Core i5-10210U
+											</p>
+											<p>
+												<span class="lang">GPU:</span> Intel
+												UHD Graphics 620
+											</p>
+											<p>
+												<span class="lang">RAM:</span> 8
+												GB
+											</p>
+										</li>
+										<li class="devices-item">
+											<h2 class="lang">
+												{t("slap")}
+											</h2>
+											<p>
+												<span class="lang">OS:</span> Arch
+												Linux
+											</p>
+											<p>
+												<span class="lang">CPU:</span> Intel
+												Core i5-2415M
+											</p>
+											<p><span>HDD:</span> 500 GB</p>
+											<p>
+												<span class="lang">RAM:</span> 12
+												GB
+											</p>
+										</li>
+									</ul>
+								</section>
+							</div>
+						</div>
+					</div>
+				</section>
+			</div>
+		</div>
+		<section id="contacts">
+			<div class="container">
+				<div class="contacts__inner">
+					<div class="contacts__links">
+						<a
+							style="margin-bottom: 50px;"
+							href="https://t.me/thefreo">TELEGRAM</a
+						>
+						<a href="mailto:me@thefreo.ru">me@thefreo.ru</a>
+					</div>
+				</div>
+			</div>
+		</section>
+	</main>
+	<Footer />
+	<script>
+		function keyByHour(h) {
+			if (h < 6) return "dev";
+			if (h < 12) return "morning";
+			if (h < 18) return "afternoon";
+			return "evening";
+		}
+
+		const el = document.getElementById("timehello");
+		if (el) {
+			const msgs = JSON.parse(el.dataset.msgs);
+			const key = keyByHour(new Date().getHours());
+			el.textContent = msgs[key];
+		}
+		//Smooth Scroll
+		const menuButtons = document.querySelectorAll(
+			".main__menu-btn, .homebtn",
+		);
+
+		menuButtons.forEach((button) => {
+			button.addEventListener("click", (e) => {
+				e.preventDefault();
+				const targetId = button.getAttribute("href");
+				const targetElement = document.querySelector(targetId);
+				const targetTop = targetElement.offsetTop;
+
+				window.scrollTo({
+					top: targetTop,
+					behavior: "smooth",
+				});
+			});
+		});
+
+		//Animation at scroll
+		const observer = new IntersectionObserver((entries) => {
+			entries.forEach((entry) => {
+				if (entry.isIntersecting) {
+					entry.target.classList.add("scroll_anim");
+					document
+						.querySelector(".about__title")
+						.classList.add("scroll_anim");
+				}
+			});
+		});
+		observer.observe(document.querySelector(".about__grid"));
+
+		const observer2 = new IntersectionObserver((entries) => {
+			entries.forEach((entry) => {
+				if (entry.isIntersecting) {
+					entry.target.classList.add("contacts_anim");
+				}
+			});
+		});
+		observer2.observe(document.querySelector(".contacts__links"));
+
+		// Brithday
+		let now = new Date();
+		let current_year = now.getFullYear();
+		let next_year = current_year + 1;
+		let target_date = new Date("Jun 15 " + next_year).getTime();
+		let days;
+
+		function update() {
+			let current_date = new Date().getTime();
+			let seconds_left = (target_date - current_date) / 1000;
+			days = parseInt(seconds_left / 86400);
+			brithDays.innerHTML = pad(days, 2);
+			if (days === 0) {
+				brithDays.textContent = "Today!";
+				brithDays.dataset.key = "today";
+			}
+		}
+		update();
+
+		function pad(num, size) {
+			let s = num + "";
+			while (s.length < size) s = "0" + s;
+			return s;
+		}
+
+		//Age
+		var today = new Date();
+		var bday = new Date("15 June 2005");
+		var years = today - bday;
+		myAge.textContent = new Date(years).getFullYear() - 1970;
+
+		console.log("What are you doing here?");
+	</script>
+</Layout>
