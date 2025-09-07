@@ -9,7 +9,7 @@ const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 
 const msgs = {
-	dev: t("dev"),
+  night: t("night"),
 	morning: t("morning"),
 	afternoon: t("afternoon"),
 	evening: t("evening"),
@@ -187,7 +187,7 @@ const msgs = {
 	<Footer />
 	<script>
 		function keyByHour(h) {
-			if (h < 6) return "dev";
+			if (h < 6) return "night";
 			if (h < 12) return "morning";
 			if (h < 18) return "afternoon";
 			return "evening";
