@@ -1,15 +1,16 @@
 ---
 import { getLangFromUrl, useTranslations } from "../i18n/utils";
 import Image from "astro/components/Image.astro";
+import Snow from "../components/Snow.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import Layout from "../layouts/Layout.astro";
-import avatar from "../assets/avatar.jpg";
+import avatar from "../assets/avatar.gif";
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 
 const msgs = {
-  night: t("night"),
+	night: t("night"),
 	morning: t("morning"),
 	afternoon: t("afternoon"),
 	evening: t("evening"),
@@ -18,6 +19,7 @@ const msgs = {
 
 <Layout>
 	<Header />
+	<Snow />
 	<main>
 		<div class="wrapper">
 			<div class="overlay">
@@ -26,14 +28,10 @@ const msgs = {
 						<div class="main__page-inner">
 							<ul class="main__menu-list">
 								<li class="main__menu-item">
-									<a class="main__menu-btn lang" href="#about"
-										>{t("about")}</a
-									>
+									<a class="main__menu-btn lang" href="#about">{t("about")}</a>
 								</li>
 								<li class="main__menu-item">
-									<a
-										class="main__menu-btn lang"
-										href="#contacts">{t("cont")}</a
+									<a class="main__menu-btn lang" href="#contacts">{t("cont")}</a
 									>
 								</li>
 							</ul>
@@ -73,9 +71,7 @@ const msgs = {
 										<br />
 										<div style="display: ruby;">
 											<p class="lang">{t("brith")}</p>
-											<span id="brithDays"></span><span
-												class="lang"
-											>
+											<span id="brithDays"></span><span class="lang">
 												{t("brith2")}</span
 											>
 										</div>
@@ -107,20 +103,16 @@ const msgs = {
 										<li class="devices-item">
 											<h2 class="lang">{t("pc")}</h2>
 											<p>
-												<span class="lang">OS:</span> Windows
-												10 Pro && Arch Linux
+												<span class="lang">OS:</span> Windows 10 Pro && Arch Linux
 											</p>
 											<p>
-												<span class="lang">CPU:</span> Amd
-												Ryzen 5500
+												<span class="lang">CPU:</span> Amd Ryzen 5500
 											</p>
 											<p>
-												<span class="lang">GPU:</span> Nvidia
-												Geforce GTX 1660 Super
+												<span class="lang">GPU:</span> Nvidia Geforce GTX 1660 Super
 											</p>
 											<p>
-												<span class="lang">RAM:</span> 16
-												GB
+												<span class="lang">RAM:</span> 16 GB
 											</p>
 										</li>
 										<li class="devices-item">
@@ -128,20 +120,16 @@ const msgs = {
 												{t("lap")}
 											</h2>
 											<p>
-												<span class="lang">OS:</span> macOS
-												Monterey 12.4
+												<span class="lang">OS:</span> macOS Monterey 12.4
 											</p>
 											<p>
-												<span class="lang">CPU:</span> Intel
-												Core i5-10210U
+												<span class="lang">CPU:</span> Intel Core i5-10210U
 											</p>
 											<p>
-												<span class="lang">GPU:</span> Intel
-												UHD Graphics 620
+												<span class="lang">GPU:</span> Intel UHD Graphics 620
 											</p>
 											<p>
-												<span class="lang">RAM:</span> 8
-												GB
+												<span class="lang">RAM:</span> 8 GB
 											</p>
 										</li>
 										<li class="devices-item">
@@ -149,17 +137,14 @@ const msgs = {
 												{t("slap")}
 											</h2>
 											<p>
-												<span class="lang">OS:</span> Arch
-												Linux
+												<span class="lang">OS:</span> Arch Linux
 											</p>
 											<p>
-												<span class="lang">CPU:</span> Intel
-												Core i5-2415M
+												<span class="lang">CPU:</span> Intel Core i5-2415M
 											</p>
 											<p><span>HDD:</span> 500 GB</p>
 											<p>
-												<span class="lang">RAM:</span> 12
-												GB
+												<span class="lang">RAM:</span> 12 GB
 											</p>
 										</li>
 									</ul>
@@ -174,9 +159,8 @@ const msgs = {
 			<div class="container">
 				<div class="contacts__inner">
 					<div class="contacts__links">
-						<a
-							style="margin-bottom: 50px;"
-							href="https://t.me/thefreo">TELEGRAM</a
+						<a style="margin-bottom: 50px;" href="https://t.me/thefreo"
+							>TELEGRAM</a
 						>
 						<a href="mailto:me@thefreo.ru">me@thefreo.ru</a>
 					</div>
@@ -200,9 +184,7 @@ const msgs = {
 			el.textContent = msgs[key];
 		}
 		//Smooth Scroll
-		const menuButtons = document.querySelectorAll(
-			".main__menu-btn, .homebtn",
-		);
+		const menuButtons = document.querySelectorAll(".main__menu-btn, .homebtn");
 
 		menuButtons.forEach((button) => {
 			button.addEventListener("click", (e) => {
@@ -223,9 +205,7 @@ const msgs = {
 			entries.forEach((entry) => {
 				if (entry.isIntersecting) {
 					entry.target.classList.add("scroll_anim");
-					document
-						.querySelector(".about__title")
-						.classList.add("scroll_anim");
+					document.querySelector(".about__title").classList.add("scroll_anim");
 				}
 			});
 		});
