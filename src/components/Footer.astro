@@ -1,5 +1,10 @@
 ---
-import { getLangFromUrl, useTranslations } from '../i18n/utils';
+import { getLangFromUrl, useTranslations } from "../i18n/utils";
+import { Image } from "astro:assets";
+
+import macbtn from "../assets/88x31/macbutton.gif";
+import firefoxbtn from "../assets/88x31/firefox.gif";
+import astrobtn from "../assets/88x31/astro.png";
 
 const today = new Date();
 const lang = getLangFromUrl(Astro.url);
@@ -7,17 +12,28 @@ const t = useTranslations(lang);
 ---
 
 <footer>
-	&copy; {today.getFullYear()}, {t('dev')} <a href="https://github.com/TheFreo/about">TheFreo</a>
+	<Image src={astrobtn} alt="" />
+	&nbsp;
+	<Image src={firefoxbtn} alt="" />
+	&nbsp;
+	<Image src={macbtn} alt="" />
+	&nbsp;
+	<br />
+	&copy; {today.getFullYear()}, {t("dev")}
+	<a href="https://github.com/TheFreo/about">TheFreo</a>
 </footer>
 <style>
 	footer {
 		color: #fff;
 		text-align: center;
-		transition: all .5s;
+		transition: all 0.5s;
 		padding-bottom: 35px;
 	}
 	footer a {
 		text-decoration: underline;
 		text-decoration-color: #888;
+	}
+	footer img {
+		margin-bottom: 15px;
 	}
 </style>
